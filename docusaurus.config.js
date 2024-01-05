@@ -21,7 +21,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Davi-Ga', // Usually your GitHub org/user name.
-  projectName: 'Anotega', // Usually your repo name.
+  projectName: 'anotega', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
