@@ -70,13 +70,27 @@ Aprendizado do tipo semi-supervisionado é aquele que os dados de treinamento s�
 
 Por exemplo, o Google Photos usa um algoritmo de aprendizado semi-supervisionado para reconhecer pessoas nas fotos. O algoritmo aprende a reconhecer as pessoas nas fotos que já foram rotuladas e depois usa esse conhecimento para reconhecer as pessoas nas fotos que ainda não foram rotuladas.
 
+:::tip Utilidade
+
+    É útil quando temos um conjunto de dados grande e apenas alguns dados rotulados, pois é mais barato rotular apenas alguns dados.
+    
+:::
+
+
 ## Por Reforço
 
 Aprendizado do tipo por reforço é aquele que o algoritmo aprende a partir de **tentativa e erro**, ou seja, o algoritmo recebe um feedback positivo quando acerta e um feedback negativo quando erra.
 
+
+
 ### Exemplo
 
 Por exemplo, se queremos treinar um algoritmo para jogar xadrez, precisamos de um conjunto de dados de jogadas de xadrez. Assim, o algoritmo vai aprender a jogar xadrez e trabalhar com base nas aplicações desejadas a partir do feedback positivo quando acerta e um feedback negativo quando erra.
+
+:::tip Utilidade
+
+    É útil quando precisamos de uma interação contínua com o ambiente para aprender, mesmo que seja demorado, geralmente usado em jogos.
+:::
 
 ## Em Batch(Lote)
 
@@ -85,6 +99,11 @@ Aprendizado do tipo em batch(lote) é aquele que o algoritmo aprende a partir de
 ### Exemplo
 
 Por exemplo, se queremos treinar um algoritmo para reconhecer imagens de cachorros, precisamos de um conjunto de dados de imagens de cachorros e outro conjunto de dados de imagens que não são de cachorros. Assim, o algoritmo vai aprender a reconhecer as imagens de cachorros e as que não são de cachorros a partir de todos os dados de treinamento de uma vez.
+
+:::tip Utilidade
+
+    É útil quando temos um conjunto de dados pequeno e que não vai mudar com o tempo, mas fica mais caro conforme o conjunto de dados aumenta.
+:::
 
 ## Online
 
