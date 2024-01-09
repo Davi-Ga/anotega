@@ -22,7 +22,7 @@ Criar um script que automatize a criação de um ambiente virtual Python. O scri
 ### Solução
 
 
-``` Bash
+```bash
 #!/bin/sh
 
 # Obtém o nome do diretório com base no primeiro argumento passado
@@ -36,26 +36,35 @@ fi
 
 # Remoção do Ambiente Virtual caso exista
 if [ -d "$dir" ]; then
+  echo "Removing existing directory: $dir"
   rm -rf $dir
+  sleep 2
+
 fi
 
 # Criação do Ambiente Virtual
-python3 -m virtualenv $dir
+echo "Creating virtual environment: $dir"
+python3 -m venv $dir
+sleep 2
 
 # Ativação do Ambiente Virtual
+echo "Activating virtual environment: $dir"
 source $dir/bin/activate
 
 if [ -f "requirements.txt" ]; then
     # Instale os requisitos
+    echo "Installing requirements"
     pip install -r requirements.txt
+    sleep 2
 else
     echo "Arquivo requirements.txt não encontrado no diretório atual."
+    exit 1
 fi
 ```
 
 Para executar o script, basta executar o comando abaixo:
 
-``` ZSH
+```zsh
 ./create-venv.sh {nome_do_diretorio}
 ```
 
@@ -63,19 +72,19 @@ Para executar o script, basta executar o comando abaixo:
 
     Caso queira podemos transformar esse bash em um executável, para isso devemos executar alguns comandos após a criação do bash.
 
-    ``` Bash
+    ```bash
     chmod +x create-venv.sh
     ```
     Esse comando acima dará permissão de execução do tipo +x ao bash.
 
-    ``` Bash
+    ```bash
     mv create_venv.sh /usr/local/bin/create_venv
     ```
     Agora com esse comando acima movemos o bash para a pasta /usr/local/bin, onde ficam os executáveis do sistema.
 
     Agora podemos executar o bash em qualquer lugar do sistema apenas com o comando abaixo:
 
-    ``` Bash
+    ```bash
     create_env {nome_do_diretorio}
     ```
 
