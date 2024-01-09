@@ -57,7 +57,7 @@ if [ -f "requirements.txt" ]; then
     pip install -r requirements.txt
     sleep 2
 else
-    echo "Arquivo requirements.txt não encontrado no diretório atual."
+    echo "No requirements.txt file found"
     exit 1
 fi
 ```
