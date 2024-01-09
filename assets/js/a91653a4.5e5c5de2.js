@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkanotega=self.webpackChunkanotega||[]).push([[947],{5745:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);
