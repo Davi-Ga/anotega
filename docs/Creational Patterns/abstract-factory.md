@@ -97,6 +97,16 @@ class PagarMeCreate(factory.AbstractCreateFactory):
            #Toda a requisicao necessária para criar um cliente
         except requests.RequestException as e:
             return {"error": e, "status": 500}
+    
+    def create_card(self):
+        url = settings.CARD_URL
+        data = {
+           #Todos os dados necessários para criar um cartão
+        }
+        try:
+           #Toda a requisicao necessária para criar um cartão
+        except requests.RequestException as e:
+            return {"error": e, "status": 500}
 ```
 
 No código acima, temos a classe concreta `PagarMeCreate` que implementa os métodos de criação de clientes e cartões, além disso, ela é responsável por criar os clientes e cartões através da API.
