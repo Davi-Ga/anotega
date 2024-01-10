@@ -25,7 +25,7 @@ Criar um script que automatize a criação de um ambiente virtual Python. O scri
 ```bash
 #!/bin/sh
 
-# Obtém o nome do diretório com base no primeiro argumento passado
+# Obtém o nome do diretório com base no primeiro argumento passado, atribuindo-o à variável dir
 dir=$1
 
 # Verifica se o nome do diretório foi informado
@@ -37,6 +37,7 @@ fi
 # Remoção do Ambiente Virtual caso exista
 if [ -d "$dir" ]; then
   echo "Removing existing directory: $dir"
+  # Remova o diretório
   rm -rf $dir
   sleep 2
 
@@ -61,6 +62,7 @@ else
     exit 1
 fi
 ```
+
 
 Para executar o script, basta executar o comando abaixo:
 
