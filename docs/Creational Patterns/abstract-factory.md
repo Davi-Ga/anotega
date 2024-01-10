@@ -7,14 +7,14 @@ sidebar_position: 1
 Define uma **interface** para criar famílias de objetos relacionados ou dependentes *sem especificar suas classes concretas*, o código cliente chama os métodos de criação da fábrica (Factory) em vez de criar objetos diretamente com uma instrução new. Como resultado disso, o código cliente trabalha com qualquer fábrica concreta e com qualquer família de produtos.
 
 
-    :::tip Vantagens
+:::tip Vantagens
 
-    - *Principio da responsabilidade única:* Você pode mover a criação de objetos de seu próprio produto para um lugar único, tornando o código mais fácil de suportar.
+- *Principio da responsabilidade única:* Você pode mover a criação de objetos de seu próprio produto para um lugar único, tornando o código mais fácil de suportar.
 
-    - *Principio da aberto/fechado:* Você pode introduzir novas variantes de produtos sem quebrar o código cliente existente.
+- *Principio da aberto/fechado:* Você pode introduzir novas variantes de produtos sem quebrar o código cliente existente.
 
 
-    :::
+:::
 
 
 ## Implementação
