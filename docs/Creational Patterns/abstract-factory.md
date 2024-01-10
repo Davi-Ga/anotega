@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Abstract Factory
 
-Define uma **interface** para criar famílias de objetos relacionados ou dependentes *sem especificar suas classes concretas*, o código cliente chama os métodos de criação da fábrica (Factory) em vez de criar objetos diretamente com uma instrução new. Como resultado disso, o código cliente trabalha com qualquer fábrica concreta e com qualquer família de produtos.
+Define uma **interface** para criar famílias de objetos relacionados ou dependentes *sem especificar suas classes concretas*, o código cliente chama os métodos de criação da fábrica (Factory) em vez de criar objetos diretamente com uma instrução new. Como resultado disso, o código cliente trabalha com qualquer fábrica concreta e com qualquer família de produtos, ou seja, em vez de criar os objetos diretamente, você chama métodos em uma "fábrica" que cria os objetos para você. Isso significa que seu código pode trabalhar com qualquer grupo de objetos que a fábrica pode criar.
 
 
 :::tip Vantagens
