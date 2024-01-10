@@ -36,7 +36,7 @@ Define uma **interface** para criar famílias de objetos relacionados ou depende
 
 Imagine que você irá implementar um sistema de pagamento com base em uma API existente, na qual permite criar cartões, clientes e planos. Para isso, você precisa criar uma interface para cada tipo de produto e implementar uma classe concreta para cada variante de produto.   
     
-```python
+```python title="factory.py"
 from abc import ABC, abstractmethod
 from django.conf import settings
 
@@ -69,7 +69,7 @@ class APIFactory(AbstractCreateFactory):
 ```
 No código acima, temos a interface `AbstractCreateFactory` que define os métodos de criação de clientes e cartões, além disso, temos a classe concreta `APIFactory` que implementa os métodos de criação de clientes e cartões, porém, não é responsável por criar os clientes e cartões, ela delega essa responsabilidade para a classe `APICreate` que é responsável por criar os clientes e cartões através da API.
 
-```python
+```python title="api.py"
 import requests
 from requests.auth import HTTPBasicAuth
 from urllib.parse import urljoin

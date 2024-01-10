@@ -22,7 +22,7 @@ Criar um script que automatize a criação de um ambiente virtual Python. O scri
 ### Solução
 
 
-```bash
+```bash title="create_venv.sh"
 #!/bin/sh
 
 # Obtém o nome do diretório com base no primeiro argumento passado, atribuindo-o à variável dir
