@@ -55,6 +55,28 @@ class AbstractCreateFactory(ABC):
     def create_card(self):
         pass
 
+    @classmethod
+    def get_instance(
+        cls,
+        user_profile: dict = None,
+        card_token: str = None,
+        customer_id: str = None,
+    ) -> AbstractPaymentFactory:
+        try:
+            class_object = import_string(settings.PAYMENT_SERVICE_CLASS)
+            return class_object(
+                user_profile,
+                card_token,
+                customer_id,
+                plan_data,
+                subscription_data,
+            )
+        except ImportError:
+            msg = (
+                "Could not import payment service '%s'" % settings.PAYMENT_SERVICE_CLASS
+            )
+            raise ImportError(msg)
+
 
 class APIFactory(AbstractCreateFactory):
     def create_customer(self):
@@ -67,7 +89,7 @@ class APIFactory(AbstractCreateFactory):
 
         return APICreate(self.card_token).create_card()
 ```
-No código acima, temos a interface `AbstractCreateFactory` que define os métodos de criação de clientes e cartões, além disso, temos a classe concreta `APIFactory` que implementa os métodos de criação de clientes e cartões, porém, não é responsável por criar os clientes e cartões, ela delega essa responsabilidade para a classe `APICreate` que é responsável por criar os clientes e cartões através da API.
+No código acima, temos a interface `AbstractCreateFactory` que define os métodos de criação de clientes e cartões e que possui um método chamado get_instance para carregar um construtor de uma instância da classe de pagamento, e a classe instanciada é determinada pela string armazenada em `settings.PAYMENT_SERVICE_CLASS`, além disso, temos a classe concreta `APIFactory` que implementa os métodos de criação de clientes e cartões, porém, não é responsável por criar os clientes e cartões, ela delega essa responsabilidade para a classe `APICreate` que é responsável por criar os clientes e cartões através da API.
 
 ```python title="api.py"
 import requests
@@ -79,7 +101,7 @@ import json
 import json
 
 
-class PagarMeCreate(factory.AbstractCreateFactory):
+class APICreate(factory.AbstractCreateFactory):
     def __init__(self, user_profile):
         super().__init__(user_profile)
         self.username = settings.USERNAME
