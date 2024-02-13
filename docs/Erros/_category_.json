@@ -1,0 +1,8 @@
+{
+  "label": "Erros",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Anotações sobre Django, um framework web para Python."
+  }
+}

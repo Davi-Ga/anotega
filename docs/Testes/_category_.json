@@ -1,0 +1,8 @@
+{
+  "label": "Testes",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Anotações sobre Django, um framework web para Python."
+  }
+}
