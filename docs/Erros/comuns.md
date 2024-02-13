@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-## Erros Comuns
+# Erros Comuns
 
 ```sequence item 0: expected str instance, NoneType found```
 

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-## Teste de Integração
+# Teste de Integração
 
 Testes de integração são projetados para validar a interação entre diferentes partes de um sistema, como nossa aplicação e serviços externos. Esses serviços podem incluir, por exemplo, um banco de dados, um serviço de e-mail ou um serviço de pagamento. O objetivo é garantir que esses componentes distintos funcionem corretamente quando combinados, identificando e corrigindo problemas que podem surgir de suas interações.
 
