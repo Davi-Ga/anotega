@@ -65,6 +65,9 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        defaultMode: 'dark',
+      },
       navbar: {
         title: 'AnoteGA',
         logo: {
@@ -79,11 +82,11 @@ const config = {
             label: 'Anotações',
           },
           // {to: '/blog', label: 'Artigos', position: 'left'},
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
+          {
+            href: 'https://github.com/Davi-Ga',
+            label: 'GitHub',
+            position: 'right',
+          },
         ],
       },
       footer: {

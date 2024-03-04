@@ -4,32 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Bem-Vindo',
+    Svg: require('@site/static/img/logo.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Bem-vindo ao <code>AnoteGA</code>. Este é um projeto, onde viso documentar todo meu aprendizado em programação, com o intuito de ajudar outras pessoas que estão iniciando na área.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Documentação de Qualidade',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Este projeto foi feito utilizando Docusaurus, um framework de código aberto para construir sites estáticos. Ele foi criado para ser fácil de usar e configurar, e permite que você se concentre em escrever documentação de alta qualidade.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Código Aberto',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Esteja livre para contribuir com o projeto, seja corrigindo erros, adicionando novas funcionalidades ou até mesmo sugerindo melhorias. O código fonte do projeto está disponível no <a href="https://github.com/Davi-Ga/anotega">GitHub</a>.
       </>
     ),
   },
