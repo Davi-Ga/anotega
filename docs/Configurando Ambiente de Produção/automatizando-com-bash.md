@@ -12,7 +12,7 @@ Todos sabemos que o Bash é uma ferramenta poderosa para automatizar tarefas. E 
 
 :::
 
-## Automatizando Criação de um Ambiente Virtual Python
+## Criação de um Ambiente Virtual Python
 
 Sabemos que é uma boa prática criar um ambiente virtual para cada projeto. Então, vamos criar um script que automatize a criação de um ambiente virtual Python.
 
@@ -92,3 +92,61 @@ Para executar o script, basta executar o comando abaixo:
 
 
 :::
+
+## Execução de Programas 
+
+Sabemos que executar programas no terminal é uma tarefa comum, então vamos criar um script que automatize a execução de um programa com base no nome do programa passado como argumento.
+
+### Objetivo
+
+Criar um script que automatize a execução de um programa. O script deve receber um argumento que será o nome do programa a ser executado. O script deve verificar se o programa existe e, caso exista, deve executá-lo.
+
+### Solução
+```bash title="execute.sh"
+
+# Obtém o diretório atual e atribui-o à variável dir
+dir=$(dirname "$0")
+
+# Função auxiliar para exibir a mensagem de uso
+usage() {
+    echo "Usage: $0 [--extractor|-e] [--cutter|-c]"
+    exit 1
+}
+
+#Iteração sobre os argumentos passados utilizando getopts e analisa se o argumento é :ec e executa a função correspondente e armazena na variável opt
+while getopts ":ec" opt; do
+    # Verifica se o argumento passado é e ou c e executa a função correspondente
+    case ${opt} in
+        e)
+            echo "Extracting documents"
+            # Verifica se o arquivo existe e executa
+            if [ -f "$dir/src/main.py" ]; then
+                python3 "$dir/src/main.py"
+            else
+                echo "Error: $dir/src/main.py does not exist"
+                exit 1
+            fi
+            ;;
+        c)
+            echo "Cutting documents"
+            if [ -f "$dir/src/utils/cutter.py" ]; then
+                python3 "$dir/src/utils/cutter.py"
+            else
+                echo "Error: $dir/src/utils/cutter.py does not exist"
+                exit 1
+            fi
+            ;;
+        \?)
+            echo "Invalid option: $OPTARG" 1>&2
+            usage
+            ;;
+    esac
+done
+# Remove os argumentos que getopts processou da lista de argumentos
+shift $((OPTIND -1))
+
+# Verifica se não foi passado nenhum argumento
+if [ $# -eq 0 ]; then
+    usage
+fi
+```
