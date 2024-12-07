@@ -86,17 +86,40 @@ class MyAPIView(APIView):
 `rest_framework.views.APIView` é uma classe base fornecida pelo Django REST Framework que fornece suporte para criar APIs RESTful. Para criar uma view baseada em métodos que responde a solicitações HTTP com base no método usado, você deve criar uma subclasse de APIView e implementar os métodos correspondentes para cada tipo de solicitação HTTP que deseja lidar.
 
 
-## Querysets e QueryParams
+## Querysets
 
 **Querysets** são objetos extremamente poderosos e versáteis que representam uma `coleção de objetos` do banco de dados. Eles são a interface principal para interagir com o banco de dados em muitos frameworks de desenvolvimento web, como o Django.
 
 Os **Querysets** são usados para `buscar objetos` do banco de dados de maneira eficiente, permitindo que você recupere apenas os dados que precisa. Eles também podem ser filtrados de acordo com critérios específicos, o que é útil para encontrar um subconjunto de dados que atenda a determinadas condições. Além disso, os Querysets podem ser ordenados, o que é essencial para apresentar os dados de uma maneira que faça sentido para os usuários.
 
-Os **Querysets** também são `mutáveis`, o que significa que você pode atualizá-los para refletir as alterações nos dados subjacentes. E, se necessário, você pode deletar objetos diretamente de um Queryset, o que é uma maneira eficiente de remover dados desnecessários ou desatualizados do banco de dados.
+**Querysets** também são `mutáveis`, o que significa que você pode atualizá-los para refletir as alterações nos dados subjacentes. E, se necessário, você pode deletar objetos diretamente de um Queryset, o que é uma maneira eficiente de remover dados desnecessários ou desatualizados do banco de dados.
 
-Por outro lado, **QueryParams** são `parâmetros que podem ser passados para a URL para filtrar os objetos que serão retornados.` Eles são uma parte crucial da construção de APIs RESTful, pois permitem que os clientes especifiquem exatamente quais dados eles querem receber.
+### Exemplo
+
+```python
+from myapp.models import MyModel
+
+# Retorna todos os objetos do modelo MyModel
+queryset = MyModel.objects.all()
+
+# Filtra os objetos do modelo MyModel com o campo 'name' igual a 'John'
+queryset = MyModel.objects.filter(name='John')
+
+# Ordena os objetos do modelo MyModel pelo campo 'age' em ordem decrescente
+queryset = MyModel.objects.order_by('-age')
+
+# Limita os objetos do modelo MyModel a 10
+queryset = MyModel.objects.all()[:10]
+```
+
+
+## QueryParams
+
+Os **QueryParams** são `parâmetros que podem ser passados para a URL para filtrar os objetos que serão retornados.` Eles são uma parte crucial da construção de APIs RESTful, pois permitem que os clientes especifiquem exatamente quais dados eles querem receber.
 
 Os **QueryParams** podem ser `usados para filtrar, ordenar e limitar os dados retornados`, tornando-os uma ferramenta poderosa para personalizar a resposta de uma API. Eles também podem ser usados para paginar os resultados, o que é essencial para lidar com grandes conjuntos de dados.
+
+
 
 ## Dicionário de Views
 
